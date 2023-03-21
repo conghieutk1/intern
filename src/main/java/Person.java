@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 public class Person {
     private int tuoi;
     private String hoTen;
@@ -18,7 +18,4 @@ public class Person {
     }
 }
 
-=======
-package PACKAGE_NAME;public class Person {
-}
->>>>>>> origin/main
+
