@@ -120,20 +120,29 @@ public class Main {
                     System.exit(0);
                 }
             }
-            System.out.print(cccd);
+            System.out.println(cccd);
             giaodien.displayTT();
-            System.out.print("Nhap chuc nang: ");
-            a = input.nextInt();
-            switch ( a ) {
-                case  1:
 
-                    break;
-                case  0:
-                    System.exit(0);
-                    break;
-                default:
-                    // Làm gì đó tại đây ...
-            }
+            do {
+                System.out.print("Nhap chuc nang: ");
+                a = input.nextInt();
+                switch ( a ) {
+                    case  1:
+                        System.out.println("Noi sinh: "+ check.checkNoiSinh(cccd));
+                        break;
+                    case 2:
+                        System.out.println("Gioi tinh: "+ check.checkGTvaNamSinh(cccd));
+                        break;
+                    case 3:
+                        System.out.println("So ngau nhien: "+ check.checkSoNgauNhien(cccd));
+                        break;
+                    case  0:
+                        System.exit(0);
+                        break;
+                    default:
+                        break;
+                }
+            } while (a == 1 || a == 2 || a == 3);
         } else {
             System.exit(0);
         }
