@@ -1,13 +1,24 @@
 public abstract class PhepTinh {
    public String loai;
+//   public double x, y;
    public PhepTinh(String loai) {
        this.loai = loai;
    }
-   //Nguyen ly truu tuong
-//   Tính trừu tượng trong Java là tính chất không thể hiện cụ thể mà chỉ nêu tên vấn đề. Đó là một quá trình che giấu các
-//    hoạt động bên trong và chỉ hiển thị những tính năng thiết yếu của đối tượng tới người dùng
-    public abstract double Tinh();
 
+    public abstract double Tinh();
+//    public double getX() {
+//        return x;
+//    }
+//    public void setX(double x) {
+//        this.x = x;
+//    }
+//
+//    public double getY() {
+//        return y;
+//    }
+//    public void setY(double y) {
+//        this.y = y;
+//    }
    public void Display() {
        System.out.println("Kết quả " + loai + " = " + Tinh());
    }
@@ -25,6 +36,7 @@ class PhepCong extends PhepTinh {
         this.x = x;
         this.y = y;
     }
+
     public void TestDaHinh() {
         System.out.println("Test da hinh: PhepCong");
     }
