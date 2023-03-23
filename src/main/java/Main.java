@@ -72,84 +72,102 @@ public class Main {
 //        input1.close();
 
 
+        // Ve TRAI TIM
+
+        System.out.println("Chuong trinh nay se in ra hinh trai tim");
+        System.out.print("Nhap chieu cao trai tim cua ban(n > 2): ");
+        Scanner input = new Scanner(System.in);
+        int a = input.nextInt();
+        Heart heart = new Heart();
+        TamGiac tamgiac = new TamGiac();
+        heart.drawHeart(a);
+        System.out.println("");
+        tamgiac.drawTGCan(a);
+        System.out.println("");
+        tamgiac.drawTGVuongTrai(a);
+        System.out.println("");
+        tamgiac.drawTGVuongPhai(a);
+        input.close();
+        // Ve tam giac can
+
 
         // BAI TAP BUOI 3
-        Account account = new Account();
-        GiaoDien giaodien = new GiaoDien();
-        Scanner input = new Scanner(System.in);
-        int a;
-        String cccd;
-        do {
-            GiaoDien.clearConsole();
-            String tenPM = "NGAN HANG SO";
-            String version = "@1.0.0";
-
-            account.setmsHV("FX123456");
-
-
-            giaodien.displayHeader(tenPM, account.getmsHV(), version);
-            giaodien.displayBody();
-
-
-            System.out.print("Nhap chuc nang: ");
-            a = input.nextInt();
-
-        } while (a != 0 && a != 1);
-
-        if (a == 1) {
-            int number;
-            do {
-                Random random = new Random();
-                number = random.nextInt(1000 - 100) + 100;
-                System.out.println("Ma xac thuc la " + number);
-                System.out.print("Nhap ma xac thuc:");
-
-                a = input.nextInt();
-            } while (a != number);
-
-
-            CheckCCCD check = new CheckCCCD();
-            System.out.print("Nhap ma can cuoc cong dan:");
-
-            cccd = input.next();
-            while (check.checkCCCD(cccd) != true) {
-                System.out.println("So CCCD khong hop le");
-                System.out.print("Vui long nhap lai hoac 'No' de thoat:");
-                cccd = input.next();
-                if (cccd == "No") {
-                    System.exit(0);
-                }
-            }
-            System.out.println(cccd);
-            giaodien.displayTT();
-
-            do {
-                System.out.print("Nhap chuc nang: ");
-                a = input.nextInt();
-                switch ( a ) {
-                    case  1:
-                        System.out.println("Noi sinh: "+ check.checkNoiSinh(cccd));
-                        break;
-                    case 2:
-                        System.out.println("Gioi tinh: "+ check.checkGTvaNamSinh(cccd));
-                        break;
-                    case 3:
-                        System.out.println("So ngau nhien: "+ check.checkSoNgauNhien(cccd));
-                        break;
-                    case  0:
-                        System.exit(0);
-                        break;
-                    default:
-                        break;
-                }
-            } while (a == 1 || a == 2 || a == 3);
-        } else {
-            System.exit(0);
-        }
-
-
-        input.close();
-
-
+//        Account account = new Account();
+//        GiaoDien giaodien = new GiaoDien();
+//        Scanner input = new Scanner(System.in);
+//        int a;
+//        String cccd;
+//        do {
+//            GiaoDien.clearConsole();
+//            String tenPM = "NGAN HANG SO";
+//            String version = "@1.0.0";
+//
+//            account.setmsHV("FX123456");
+//
+//
+//            giaodien.displayHeader(tenPM, account.getmsHV(), version);
+//            giaodien.displayBody();
+//
+//
+//            System.out.print("Nhap chuc nang: ");
+//            a = input.nextInt();
+//
+//        } while (a != 0 && a != 1);
+//
+//        if (a == 1) {
+//            int number;
+//            do {
+//                Random random = new Random();
+//                number = random.nextInt(1000 - 100) + 100;
+//                System.out.println("Ma xac thuc la " + number);
+//                System.out.print("Nhap ma xac thuc:");
+//
+//                a = input.nextInt();
+//            } while (a != number);
+//
+//
+//            CheckCCCD check = new CheckCCCD();
+//            System.out.print("Nhap ma can cuoc cong dan:");
+//
+//            cccd = input.next();
+//            while (check.checkCCCD(cccd) != true) {
+//                System.out.println("So CCCD khong hop le");
+//                System.out.print("Vui long nhap lai hoac 'No' de thoat:");
+//                cccd = input.next();
+//                if (cccd == "No") {
+//                    System.exit(0);
+//                }
+//            }
+//            System.out.println(cccd);
+//            giaodien.displayTT();
+//
+//            do {
+//                System.out.print("Nhap chuc nang: ");
+//                a = input.nextInt();
+//                switch ( a ) {
+//                    case  1:
+//                        System.out.println("Noi sinh: "+ check.checkNoiSinh(cccd));
+//                        break;
+//                    case 2:
+//                        System.out.println("Gioi tinh: "+ check.checkGTvaNamSinh(cccd));
+//                        break;
+//                    case 3:
+//                        System.out.println("So ngau nhien: "+ check.checkSoNgauNhien(cccd));
+//                        break;
+//                    case  0:
+//                        System.exit(0);
+//                        break;
+//                    default:
+//                        break;
+//                }
+//            } while (a == 1 || a == 2 || a == 3);
+//        } else {
+//            System.exit(0);
+//        }
+//
+//
+//        input.close();
+//
+//
     }
 }
