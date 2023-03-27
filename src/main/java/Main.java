@@ -1,6 +1,10 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.Random;
+import org.apache.log4j.Logger;
+import java.io.*;
 public class Main {
+    //private static Logger logger = Logger.getLogger(Main.class);
     public static void main(String[] args) {
 
 //   Nguyen ly truu tuong
@@ -74,20 +78,20 @@ public class Main {
 
         // Ve TRAI TIM
 
-        System.out.println("Chuong trinh nay se in ra hinh trai tim");
-        System.out.print("Nhap chieu cao trai tim cua ban(n > 2): ");
-        Scanner input = new Scanner(System.in);
-        int a = input.nextInt();
-        Heart heart = new Heart();
-        TamGiac tamgiac = new TamGiac();
-        heart.drawHeart(a);
-        System.out.println("");
-        tamgiac.drawTGCan(a);
-        System.out.println("");
-        tamgiac.drawTGVuongTrai(a);
-        System.out.println("");
-        tamgiac.drawTGVuongPhai(a);
-        input.close();
+//        System.out.println("Chuong trinh nay se in ra hinh trai tim");
+//        System.out.print("Nhap chieu cao trai tim cua ban(n > 2): ");
+//        Scanner input = new Scanner(System.in);
+//        int a = input.nextInt();
+//        Heart heart = new Heart();
+//        TamGiac tamgiac = new TamGiac();
+//        heart.drawHeart(a);
+//        System.out.println("");
+//        tamgiac.drawTGCan(a);
+//        System.out.println("");
+//        tamgiac.drawTGVuongTrai(a);
+//        System.out.println("");
+//        tamgiac.drawTGVuongPhai(a);
+//        input.close();
         // Ve tam giac can
 
 
@@ -106,7 +110,7 @@ public class Main {
 //
 //
 //            giaodien.displayHeader(tenPM, account.getmsHV(), version);
-//            giaodien.displayBody();
+//            giaodien.displayBodyB3();
 //
 //
 //            System.out.print("Nhap chuc nang: ");
@@ -168,6 +172,102 @@ public class Main {
 //
 //        input.close();
 //
+
+
+
+        //BAI TAP BUOI 4
+//        Customer customer = new Customer();
+//        Account account = new Account();
+//        GiaoDien giaodien = new GiaoDien();
+//        Scanner input = new Scanner(System.in);
 //
-    }
+//        int a;
+//
+//        do {
+//            GiaoDien.clearConsole();
+//            String tenPM = "NGAN HANG DIEN TU";
+//            String version = "@1.0.0";
+//
+//            account.setmsHV("FX123");
+//
+//
+//            giaodien.displayHeaderB4(tenPM, account.getmsHV(), version);
+//            giaodien.displayBodyB4();
+//
+//
+//            System.out.print("Nhap chuc nang: ");
+//            a = input.nextInt();
+//        } while (a != 0 && a != 1 && a != 2 && a != 3 & a != 4 && a != 5);
+//        switch (a) {
+//            case 1:
+//                customer.showCustomer("111222");
+//                break;
+//            case 2:
+//                System.out.print("Nhap so tai khoan(6 ky tu): ");
+//                String stk = input.next();
+//                while (stk.length() != 6) {
+//                    System.out.println("So tai khoan khong hop le hoac da ton tai");
+//                    System.out.print("Nhap so tai khoan(6 ky tu): ");
+//                    stk = input.next();
+//                }
+//                customer.setSTK(stk);
+//
+//                int sodu;
+//                do {
+//                    System.out.print("Nhap so du(be hon 1 ty): ");
+//                    sodu = input.nextInt();
+//                } while (sodu < 0 && sodu > 1000000000);
+//
+//                customer.setsodu(sodu);
+//                break;
+//            case 4:
+//                break;
+//            default:
+//                break;
+//        }
+//
+//        input.close();
+
+        try
+        {
+            String sodu = "";
+            File file=new File("C:\\ProgramData\\logging\\springtest.txt");    //creates a new file instance
+            FileReader fr=new FileReader(file);   //reads the file
+            BufferedReader br=new BufferedReader(fr);  //creates a buffering character input stream
+            StringBuffer sb=new StringBuffer();    //constructs a string buffer with no characters
+            String line = "";
+            int i = 0;
+            while((line=br.readLine())!=null)
+            {
+                for (int j = 0; j < line.length(); j++) {
+                    if (j >= 17 && (line.toString()).charAt(j) != ',' && (line.toString()).charAt(j) != 'đ') {
+                        sodu += (line.toString()).charAt(j);
+                    }
+                }
+//                if (i >= 17 && (line.toString()).charAt(i) != ',' && (line.toString()).charAt(i) != 'đ') {
+//                    sodu += (line.toString()).charAt(i);
+//                }
+//                System.out.print("Contents of File in line : ");
+//                String str = line.toString();
+//                System.out.println((line.toString()).charAt(0));
+                sb.append(line);      //appends line to string buffer
+                sb.append("\n");     //line feed
+                i++;
+            }
+            fr.close();    //closes the stream and release the resources
+            System.out.println("Contents of File: ");
+            System.out.println(sb.toString());   //returns a string that textually represents the object
+            System.out.println(sodu);
+
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+
+
+
+
+
+}
 }

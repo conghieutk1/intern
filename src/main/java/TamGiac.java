@@ -24,13 +24,6 @@ public class TamGiac {
     }
 
     public void drawTGVuongPhai(int n) {
-//        int i,j;
-//        for(i = 1; i <= n; i++) {
-//            for(j = 1; j <= i; j++)
-//                System.out.print("*");
-//
-//            System.out.println("");
-//        }
 
         int q = 0;
         while (n > 0)
